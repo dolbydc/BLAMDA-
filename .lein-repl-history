@@ -1,0 +1,102 @@
+(map #(%) (range 0 5))
+(range 0 5)
+(map #(clojure.pprint/pprint %) (range 0 5))
+(map #(%) (range 0 5))
+(map #({%}) (range 0 5))
+(map #(hash-map :value %) (range 0 5))
+(flatten (map #(hash-map :value %) (range 0 5)))
+quit
+(range 0 -1)
+(range 0 0)
+quit
+(rational? (/ 5 6))
+(/ 5 6)
+(ratio? (/ 5 6))
+(ratio? (/ 15 3))
+(defn fizzbuzz [num]
+(cond
+  (and (ratio? (/ num 3)) (ratio? (/ num 5))) num
+  (not (ratio? (/ num 3)) "fizz"
+  :else "buzz"))
+)
+(defn fizzbuzz [num]
+(cond
+(and (ratio? (/ num 3)) (ratio? (/ num 5))) num
+(and (not (ratio? (/ num 3))) (not (ratio? (/ num 5)))) "fizzbuzz"
+(not (ratio? (/ num 3))) "fizz"
+:else "buzz"))
+(fizzbuzz 15)
+(fizzbuzz 5)
+(fizzbuzz 4)
+(fizzbuzz 3)
+(fizzbuzz 9)
+(defn fizzbuzz [num]
+(cond
+  (and (ratio? (/ num 3) (/ num 5))) num
+  (and (integer? (/ num 3)) (integer? (/ num 5))) "fizzbuzz"
+  (integer? (/ num 3) "fizz"
+(defn fizzbuzz [num]
+(cond
+  (and (ratio? (/ num 3) (/ num 5))) num
+  (and (integer? (/ num 3)) (integer? (/ num 5))) "fizzbuzz"
+  (integer? (/ num 3)) "fizz"
+  (integer? (/ num 5)) "buzz"))
+(fizzbuzz 7)
+(defn ratios? [& args]
+  (loop [arg (first args) all-ratios? nil)
+(defn ratios? [& args]
+  (loop [arg (first args) all-ratios? nil]
+    (if (some? arg)
+      (recur (rest args) (if (nil? all-ratios?) (ratio? arg) (and all-ratios? (ratio? arg))))
+      all-ratios?)
+)
+(ratios? (/ 5 6) (/ 7 3))
+(defn test-fn [& args]
+  (clojure.pprint/pprint args))
+(test-fn (/ 5 6) (/ 7 3))
+(defn ratios? [& args]
+  (loop [arg (first args) all-ratios? nil]
+    (clojure.pprint/pprint arg)
+    (if (some? arg)
+      (recur (rest args) (if (nil? all-ratios?) (ratio? arg) (and all-ratios? (ratio? arg))))
+      all-ratios?)))
+(ratios (/ 5 6) (/ 7 6))
+(ratios? (/ 5 6) (/ 7 6))
+(defn ratios? [& args]
+  (loop [arg (first args) all-ratios? nil]
+    (clojure.pprint/pprint arg)
+    (if (some? arg)
+       (recur (rest arg) (if (nil? all-ratios?) (ratio? arg) (and all-ratios? (ratio? arg))))
+       all-ratios?)))
+(ratios? (/ 5 6) (/ 7 3))
+(defn ratios? [& args]
+  (loop [args (first args) all-ratios? nil]
+    (clojure.pprint/pprint arg)
+    (if-let [arg (first args)]
+       (recur (rest args) (if (nil? all-ratios?) (ratio? arg) (and all-ratios? (ratio? arg))))
+       all-ratios?)))
+(defn ratios? [& args]
+  (loop [args (first args) all-ratios? nil]
+    (clojure.pprint/pprint args)
+    (if-let [arg (first args)]
+       (recur (rest args) (if (nil? all-ratios?) (ratio? arg) (and all-ratios? (ratio? arg))))
+       all-ratios?)))
+(ratios? (/ 5 6) (/ 7 3))
+(defn ratios? [& args]
+  (loop [args args all-ratios? nil]
+    (clojure.pprint/pprint args)
+    (if-let [arg (first args)]
+       (recur (rest args) (if (nil? all-ratios?) (ratio? arg) (and all-ratios? (ratio? arg))))
+       all-ratios?)))
+(ratios? (/ 5 6) (/ 7 2))
+(ratios? (/ 5 6) (/ 8 2))
+(defn all-ratios?
+  [& args]
+  (reduce #(and %1 (ratio? %2)) true args))
+(all-ratios? (/ 5 6))
+(all-ratios? (/ 5 6) (/ 8 2))
+(all-ratios? (/ 5 6) (/ 7 2))
+(all-ratios? (/ 5 6) 1.5)
+(all-ratios?)
+.quit
+quit
