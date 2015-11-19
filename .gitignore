@@ -1,0 +1,30 @@
+/target
+*.jar
+*.class
+/.lein-*
+/.nrepl-port
+*.sublime-*
+*.swp
+
+# Intellij / Web Storm
+.idea/
+*.iml
+*.iws
+
+# Mac
+.DS_Store
+
+# Node modules
+node_modules/
+
+# build files
+public/
+
+# database
+*.db
+*.db-shm
+*.db-wal
+*.db-journal
+
+# misc
+*.log
